@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-
+import ScoreCircle from "~/components/ScoreCircle";
 const ResumeCard: ({ resume:{id, companyName, jobTitle, feedback} }: { resume: Resume }) => React.JSX.Element =
     ({ resume }: { resume: Resume }) => {
         return (
@@ -16,6 +16,11 @@ const ResumeCard: ({ resume:{id, companyName, jobTitle, feedback} }: { resume: R
                         {resume.jobTitle}
                     </h3>
                 </div>
+
+                <div className="flex-shrink-0">
+                    <ScoreCircle score={resume.feedback.overallScore} />
+                </div>
+
             </Link>
         );
     };
